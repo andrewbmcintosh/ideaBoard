@@ -2,11 +2,15 @@
   "name": "ideaBoard",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
+  "engines": {
+    "node": "11.2.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" "
+    "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" ",
+    "postinstall": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
