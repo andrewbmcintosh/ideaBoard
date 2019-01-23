@@ -3,7 +3,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
-mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/idea-board
+const routes = require('./routes/index')
+
+
+// in the readme they use UserRoutes for routes
+app.use('/api/users', routes)
 
 const connection = mongoose.connection;
 connection.on('connected', () => {
